@@ -42,7 +42,7 @@ const Comment = ({ comment }) => {
 
   useEffect(() => {
     const fetchComment = async () => {
-      const res = await axios.get(`/api/users/find/${comment.userId}`);
+      const res = await axios.get(`https://backend-pasn.onrender.com/api/users/find/${comment.userId}`);
       setChannel(res.data);
     };
     fetchComment();
