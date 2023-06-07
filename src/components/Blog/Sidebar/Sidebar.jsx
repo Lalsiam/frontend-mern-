@@ -14,7 +14,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("/api/blogpcat");
+      const res = await axios.get("https://backend-pasn.onrender.com/api/blogpcat");
       setCats(res.data);
     };
     getCats();
@@ -22,7 +22,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/api/blogposts/" + path);
+      const res = await axios.get("https://backend-pasn.onrender.com/api/blogposts/" + path);
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
