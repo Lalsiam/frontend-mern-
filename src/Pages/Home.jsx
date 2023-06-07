@@ -37,14 +37,14 @@ const Home = ({ type }) => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`/api/videos/${type}`);
+      const res = await axios.get(`https://backend-pasn.onrender.com/api/videos/${type}`);
       setVideos(res.data); //data has all the random videos
     };
     fetchVideos();
   }, [type]);
 
   const increaseView = async () => {
-    await axios.put(`/api/users/view/${currentVideo._id}`);
+    await axios.put(`https://backend-pasn.onrender.com/api/users/view/${currentVideo._id}`);
 
   };
 
