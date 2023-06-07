@@ -37,14 +37,14 @@ const Comments = ({ videoId }) => {
   const [comments, setComments] = useState([]);
 
   const handleComment= async(desc, videoId)=>{
-    const res = await axios.post("/api/comments", {desc, videoId});
+    const res = await axios.post("https://backend-pasn.onrender.com/api/comments", {desc, videoId});
     res.status === 200 && console.log("hello done")
   }
 
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await axios.get(`/api/comments/${videoId}`);
+        const res = await axios.get(`https://backend-pasn.onrender.com/api/comments/${videoId}`);
         setComments(res.data);
       } catch (err) {}
     };
