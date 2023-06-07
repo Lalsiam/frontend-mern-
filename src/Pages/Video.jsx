@@ -138,9 +138,9 @@ const Video = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const videoRes = await axios.get(`/api/videos/find/${path}`);
+        const videoRes = await axios.get(`https://backend-pasn.onrender.com/api/videos/find/${path}`);
         const channelRes = await axios.get(
-          `/api/users/find/${videoRes.data.userId}`
+          `https://backend-pasn.onrender.com/api/users/find/${videoRes.data.userId}`
         );
 
         setChannel(channelRes.data);
@@ -151,19 +151,19 @@ const Video = () => {
   }, [path, dispatch]);
 
   const handleLike = async () => {
-    await axios.put(`/api/users/like/${currentVideo._id}`);
+    await axios.put(`https://backend-pasn.onrender.com/api/users/like/${currentVideo._id}`);
     dispatch(like(currentUser._id));
   };
 
   const handleDislike = async () => {
-    await axios.put(`/api/users/dislike/${currentVideo._id}`);
+    await axios.put(`https://backend-pasn.onrender.com/api/users/dislike/${currentVideo._id}`);
     dispatch(dislike(currentUser._id));
   };
 
   const handleSub = async () => {
     currentUser.subscribedUsers.includes(channel._id)
-      ? await axios.put(`/api/users/unsub/${channel._id}`)
-      : await axios.put(`/api/users/sub/${channel._id}`);
+      ? await axios.put(`https://backend-pasn.onrender.com/api/users/unsub/${channel._id}`)
+      : await axios.put(`https://backend-pasn.onrender.com/api/users/sub/${channel._id}`);
     dispatch(subscription(channel._id));
   };
 
