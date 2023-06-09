@@ -14,7 +14,7 @@ const { search } = useLocation();
 
 useEffect(() => {
   const fetchPosts = async () => {
-    const res = await axios.get("/api/blogposts" + search);
+    const res = await axios.get("https://backend-pasn.onrender.com/api/blogposts" + search);
     setPosts(res.data);
   };
   fetchPosts();
