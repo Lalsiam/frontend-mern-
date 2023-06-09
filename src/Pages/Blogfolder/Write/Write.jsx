@@ -27,11 +27,11 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("/api/upload", data);
+        await axios.post("https://backend-pasn.onrender.com/api/upload", data);
       } catch (err) {}
     }
     try {
-      const res = await axios.post("/api/blogposts", newPost);
+      const res = await axios.post("https://backend-pasn.onrender.com/api/blogposts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
