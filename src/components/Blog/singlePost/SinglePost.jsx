@@ -22,7 +22,7 @@ export default function SinglePost() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/api/blogposts/" + path);
+      const res = await axios.get("https://backend-pasn.onrender.com/api/blogposts/" + path);
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
@@ -32,7 +32,7 @@ export default function SinglePost() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/blogposts/${post._id}`, {
+      await axios.delete(`https://backend-pasn.onrender.com/api/blogposts/${post._id}`, {
         data: { name: user.name },
       });
       navigate("/blogpage");
@@ -41,7 +41,7 @@ export default function SinglePost() {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`/api/blogposts/${post._id}`, {
+      await axios.put(`https://backend-pasn.onrender.com/api/blogposts/${post._id}`, {
         name: user.name,
         title,
         desc,
