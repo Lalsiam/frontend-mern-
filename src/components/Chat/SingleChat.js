@@ -19,7 +19,7 @@ import Lottie from "react-lottie"
 import animationData from "../../animations/typing.json";
 
 
-const ENDPOINT = "https://workspace-jssstu-backend.onrender.com";  //hosting sight
+const ENDPOINT = "https://backend-pasn.onrender.com";  //hosting sight
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
